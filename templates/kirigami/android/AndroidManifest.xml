@@ -5,8 +5,8 @@
  -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="org.kde.%{APPNAMELC}"
-          android:versionName="0.0.1"
-          android:versionCode="1604412458"
+          android:versionName="${versionName}"
+          android:versionCode="${versionCode}"
           android:installLocation="auto">
     <application android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="%{APPNAME}" android:icon="@drawable/logo">
         <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation"
