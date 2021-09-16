@@ -375,7 +375,8 @@ Item {
             Kirigami.MnemonicData.enabled: item.Kirigami.FormData.buddyFor && item.Kirigami.FormData.buddyFor.activeFocusOnTab
             Kirigami.MnemonicData.controlType: Kirigami.MnemonicData.FormLabel
             Kirigami.MnemonicData.label: item.Kirigami.FormData.label
-            text: Kirigami.MnemonicData.richTextLabel
+            text: root.wideMode || item.Kirigami.FormData.isSection ? Kirigami.MnemonicData.richTextLabel
+                                                                    : "<b>" + Kirigami.MnemonicData.richTextLabel + "</b>" // use bold in narrow layouts for contrast
 
             level: item.Kirigami.FormData.isSection ? 3 : 5
 
