@@ -376,7 +376,7 @@ Item {
             Kirigami.MnemonicData.controlType: Kirigami.MnemonicData.FormLabel
             Kirigami.MnemonicData.label: item.Kirigami.FormData.label
             text: Kirigami.MnemonicData.richTextLabel
-            font.weight: root.wideMode || item.Kirigami.FormData.isSection ? Font.Normal : Font.DemiBold // use bold in narrow layouts for contrast
+            font.weight: root.wideMode || item.Kirigami.FormData.isSection ? Font.Normal : Font.Bold // use bold in narrow layouts for contrast
                                                                     
             level: item.Kirigami.FormData.isSection ? 3 : 5
 
@@ -399,7 +399,7 @@ Item {
             Layout.fillWidth: !root.wideMode
             wrapMode: Text.Wrap
 
-            Layout.topMargin: root.wideMode && item.Kirigami.FormData.buddyFor.parent != root ? item.Kirigami.FormData.buddyFor.y : ((index === 0 || root.wideMode) ? 0 : Kirigami.Units.smallSpacing)
+            Layout.topMargin: root.wideMode && item.Kirigami.FormData.buddyFor.parent != root ? item.Kirigami.FormData.buddyFor.y : ((index === 0 || root.wideMode) ? 0 : Kirigami.Units.smallSpacing * 2)
             onItemChanged: {
                 if (!item) {
                     labelItem.destroy();
