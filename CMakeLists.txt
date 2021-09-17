@@ -22,6 +22,13 @@ if(DEFINED STATIC_LIBRARY)
     message(FATAL_ERROR "Use the BUILD_SHARED_LIBS=OFF option to build a static library, STATIC_LIBRARY is no longer a supported option")
 endif()
 
+if (NOT ${BUILD_SHARED_LIBS})
+    # Examples and tests are not supported when building a static library, so
+    # force them to OFF.
+    set(BUILD_TESTING OFF)
+    set(BUILD_EXAMPLES OFF)
+endif()
+
 # Make CPack available to easy generate binary packages
 include(CPack)
 include(FeatureSummary)
@@ -120,11 +127,11 @@ if (NOT ANDROID)
     add_subdirectory(templates)
 endif()
 
-if (BUILD_EXAMPLES AND BUILD_SHARED_LIBS)
+if (BUILD_EXAMPLES)
     add_subdirectory(examples)
 endif()
 
-if (BUILD_TESTING AND BUILD_SHARED_LIBS)
+if (BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
 
