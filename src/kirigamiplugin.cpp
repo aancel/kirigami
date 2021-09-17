@@ -45,7 +45,6 @@ static QString s_selectedStyle;
 
 #ifdef KIRIGAMI_BUILD_TYPE_STATIC
 #include "loggingcategory.h"
-#include "qrc_kirigami.cpp"
 #include <QDebug>
 #endif
 
