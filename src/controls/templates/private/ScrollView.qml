@@ -20,8 +20,6 @@ MouseArea {
     property int leftPadding: 0
     property int bottomPadding: 0
     property int rightPadding: 0
-    property real horizontalScrollBarHeight: !Kirigami.Settings.hasTransientTouchInput && flickableItem.ScrollBar.horizontal && flickableItem.ScrollBar.horizontal.visible ? flickableItem.ScrollBar.horizontal.width : 0
-    property real verticalScrollBarWidth: !Kirigami.Settings.hasTransientTouchInput && flickableItem.ScrollBar.vertical && flickableItem.ScrollBar.vertical.visible ? flickableItem.ScrollBar.vertical.width : 0
     property bool canFlickWithMouse: false
 
     // Note: These are used because RefreshableScrollView overrides right and

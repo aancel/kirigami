@@ -307,8 +307,7 @@ T.Dialog {
             
             // needs to explicitly be set for each side to work
             leftPadding: 0; topPadding: 0
-            rightPadding: contentControl.verticalScrollBarWidth
-            bottomPadding: contentControl.horizontalScrollBarHeight
+            rightPadding: 0; bottomPadding: 0
             
             // height of everything else in the dialog other than the content
             property real otherHeights: root.header.height + root.footer.height + root.topPadding + root.bottomPadding;
