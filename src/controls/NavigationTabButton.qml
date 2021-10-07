@@ -46,7 +46,14 @@ T.TabButton {
                 ++visibleButtonCount
             }
         }
-        return Math.max(implicitWidth, Math.round(parent.width / visibleButtonCount))
+        
+        let minWidth = height * 0.75;
+        // make buttons go off the screen if there is physically no room for them
+        while (parent.width / visibleButtonCount < minWidth) {
+            visibleButtonCount--;
+        }
+        
+        return Math.round(parent.width / visibleButtonCount)
     }
 
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
@@ -99,12 +106,12 @@ T.TabButton {
     }
 
     contentItem: ColumnLayout {
-        spacing: control.spacing
+        spacing: label.lineCount > 1 ? 0 : control.spacing
 
         Kirigami.Icon {
             source: control.icon.name || control.icon.source
             isMask: true
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
+            Layout.alignment: Qt.AlignHCenter | (label.lineCount > 1 ? 0 : Qt.AlignBottom)
             implicitHeight: control.icon.height
             implicitWidth: control.icon.width
             color: control.icon.color
@@ -112,23 +119,32 @@ T.TabButton {
             Behavior on opacity { NumberAnimation {} }
         }
         QQC2.Label {
+            id: label
             Kirigami.MnemonicData.enabled: control.enabled && control.visible
             Kirigami.MnemonicData.controlType: Kirigami.MnemonicData.MenuItem
             Kirigami.MnemonicData.label: control.text
-
+            
             text: Kirigami.MnemonicData.richTextLabel
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-            horizontalAlignment: Text.AlignHCenter
+            lineHeight: 0.75
+
+            wrapMode: QQC2.Label.Wrap
             elide: Text.ElideMiddle
             color: control.checked ? control.highlightForegroundColor : control.foregroundColor
+            horizontalAlignment: Text.AlignHCenter
+            
             font.bold: control.checked
             font.family: Kirigami.Theme.smallFont.family
             font.pointSize: Kirigami.Theme.smallFont.pointSize
+            
             Behavior on color { ColorAnimation {} }
             Behavior on opacity { NumberAnimation {} }
+            
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
             // Work around bold text changing implicit size
             Layout.preferredWidth: boldMetrics.implicitWidth
             Layout.preferredHeight: boldMetrics.implicitHeight
+            Layout.maximumWidth: control.width - control.leftPadding - control.rightPadding
+            
             QQC2.Label {
                 id: boldMetrics
                 visible: false
@@ -137,6 +153,7 @@ T.TabButton {
                 font.family: Kirigami.Theme.smallFont.family
                 font.pointSize: Kirigami.Theme.smallFont.pointSize
                 horizontalAlignment: Text.AlignHCenter
+                wrapMode: QQC2.Label.Wrap
                 elide: Text.ElideMiddle
             }
         }
