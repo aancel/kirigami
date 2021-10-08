@@ -125,12 +125,13 @@ T.TabButton {
             Kirigami.MnemonicData.label: control.text
             
             text: Kirigami.MnemonicData.richTextLabel
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+            horizontalAlignment: Text.AlignHCenter
             lineHeight: 0.75
 
             wrapMode: QQC2.Label.Wrap
             elide: Text.ElideMiddle
             color: control.checked ? control.highlightForegroundColor : control.foregroundColor
-            horizontalAlignment: Text.AlignHCenter
             
             font.bold: control.checked
             font.family: Kirigami.Theme.smallFont.family
@@ -139,7 +140,6 @@ T.TabButton {
             Behavior on color { ColorAnimation {} }
             Behavior on opacity { NumberAnimation {} }
             
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
             // Work around bold text changing implicit size
             Layout.preferredWidth: boldMetrics.implicitWidth
             Layout.preferredHeight: boldMetrics.implicitHeight
