@@ -39,18 +39,12 @@ T.TabButton {
 
     width: {
         // Counting buttons because Repeaters can be counted among visibleChildren
-        let visibleButtonCount = 0
+        let visibleButtonCount = 0, minWidth = height * 0.75;
         for (let i = 0; i < parent.visibleChildren.length; ++i) {
-            // Checking for AbstractButtons because any AbstractButton can act as a tab
-            if (parent.visibleChildren[i] instanceof T.AbstractButton) {
+            if (parent.width / visibleButtonCount >= minWidth && // make buttons go off the screen if there is physically no room for them
+                parent.visibleChildren[i] instanceof T.AbstractButton) { // Checking for AbstractButtons because any AbstractButton can act as a tab
                 ++visibleButtonCount
             }
-        }
-        
-        let minWidth = height * 0.75;
-        // make buttons go off the screen if there is physically no room for them
-        while (parent.width / visibleButtonCount < minWidth) {
-            visibleButtonCount--;
         }
         
         return Math.round(parent.width / visibleButtonCount)
@@ -129,7 +123,7 @@ T.TabButton {
             horizontalAlignment: Text.AlignHCenter
             lineHeight: 0.75
 
-            wrapMode: QQC2.Label.Wrap
+            wrapMode: Text.Wrap
             elide: Text.ElideMiddle
             color: control.checked ? control.highlightForegroundColor : control.foregroundColor
             
@@ -143,7 +137,7 @@ T.TabButton {
             // Work around bold text changing implicit size
             Layout.preferredWidth: boldMetrics.implicitWidth
             Layout.preferredHeight: boldMetrics.implicitHeight
-            Layout.maximumWidth: control.width - control.leftPadding - control.rightPadding
+            Layout.fillWidth: true
             
             QQC2.Label {
                 id: boldMetrics
