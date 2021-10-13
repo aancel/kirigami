@@ -7,11 +7,13 @@ set(libkirigami_SRCS
     tabletmodewatcher.cpp
     styleselector.cpp
     units.cpp
+    virtualkeyboardwatcher.cpp
 )
 
 #use dbus on linux, bsd etc, but not android and apple stuff
 if (UNIX AND NOT ANDROID AND NOT(APPLE) AND NOT(DISABLE_DBUS))
     qt_add_dbus_interface(libkirigami_SRCS org.kde.KWin.TabletModeManager.xml tabletmodemanager_interface)
+    qt_add_dbus_interface(libkirigami_SRCS org.kde.KWin.VirtualKeyboard.xml virtualkeyboard_interface)
     set(LIBKIRIGAMKI_EXTRA_LIBS Qt5::DBus)
 endif()
 
@@ -59,6 +61,7 @@ ecm_generate_headers(Kirigami2_HEADERS
     KirigamiPluginFactory
     TabletModeWatcher
     Units
+    VirtualKeyboardWatcher
 
     REQUIRED_HEADERS Kirigami2_HEADERS
 )

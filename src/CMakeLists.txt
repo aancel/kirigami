@@ -8,6 +8,7 @@ else()
         libkirigami/tabletmodewatcher.cpp
         libkirigami/kirigamipluginfactory.cpp
         libkirigami/units.cpp
+        libkirigami/virtualkeyboardwatcher.cpp
         ${CMAKE_CURRENT_BINARY_DIR}/libkirigami/loggingcategory.cpp)
 endif()
 
@@ -35,6 +36,7 @@ set(kirigami_SRCS
     toolbarlayoutdelegate.cpp
     sizegroup.cpp
     spellcheckinghint.cpp
+    inputmethod.cpp
     scenegraph/managedtexturenode.cpp
     scenegraph/shadowedrectanglenode.cpp
     scenegraph/shadowedrectanglematerial.cpp

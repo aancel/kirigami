@@ -15,6 +15,7 @@
 #include "formlayoutattached.h"
 #include "icon.h"
 #include "imagecolors.h"
+#include "inputmethod.h"
 #include "mnemonicattached.h"
 #include "pagepool.h"
 #include "pagerouter.h"
@@ -25,8 +26,8 @@
 #include "sizegroup.h"
 #include "spellcheckinghint.h"
 #include "toolbarlayout.h"
-#include "wheelhandler.h"
 #include "units.h"
+#include "wheelhandler.h"
 
 #include <QClipboard>
 #include <QGuiApplication>
@@ -313,6 +314,11 @@ void KirigamiPlugin::registerTypes(const char *uri)
     // 2.19
     qmlRegisterType(componentUrl(QStringLiteral("NavigationTabBar.qml")), uri, 2, 19, "NavigationTabBar");
     qmlRegisterType(componentUrl(QStringLiteral("NavigationTabButton.qml")), uri, 2, 19, "NavigationTabButton");
+
+    // 2.20
+    qmlRegisterSingletonType<InputMethod>(uri, 2, 20, "InputMethod", [](QQmlEngine *, QJSEngine *) {
+        return new InputMethod{};
+    });
 
     qmlProtectModule(uri, 2);
 }
