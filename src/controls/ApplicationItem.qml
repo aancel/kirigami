@@ -81,17 +81,20 @@ AbstractApplicationItem {
 
     /**
      * @property QtQuick.StackView ApplicationItem::pageStack
-     * Readonly.
-     * The stack used to allocate the pages and to manage the transitions
-     * between them.
+     *
+     * @brief This property holds the stack used to allocate the pages and to
+     * manage the transitions between them.
+     *
      * It's using a PageRow, while having the same API as PageStack,
      * it positions the pages as adjacent columns, with as many columns
      * as can fit in the screen. An handheld device would usually have a single
      * fullscreen column, a tablet device would have many tiled columns.
+     *
+     * @warning This property is readonly.
      */
-    property alias pageStack: __pageStack
+    property alias pageStack: __pageStack // TODO KF6 make readonly
 
-    //redefines here as here we can know a pointer to PageRow
+    // Redefines here as here we can know a pointer to PageRow
     wideScreen: width >= applicationWindow().pageStack.defaultColumnWidth*2
 
     Component.onCompleted: {

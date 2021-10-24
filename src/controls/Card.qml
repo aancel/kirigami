@@ -29,25 +29,32 @@ Kirigami.AbstractCard {
     id: root
 
     /**
+     * @brief This property holds the clickable actions that will be available in the footer
+     * of the card.
+     *
+     * The actions will be represented by a list of ToolButtons with an optional overflow
+     * menu, when not all of them will fit in the available Card width.
+     *
+     * Internally this is using a org::kde:kirigami:ActionToolBar.
+     *
      * @property list<org::kde::kirigami::Action> Card::actions
-     * if the card should provide clickable actions, put them in this property,
-     * they will be put in the footer as a list of ToolButtons plus an optional
-     * overflow menu, when not all of them will fit in the available Card width.
      */
     property list<QtObject> actions
 
     /**
+     * This property holds the list of actions is for those you always want in the menu, even
+     * if there is enough space.
+     *
      * @property list<org::kde::kirigami::Action> hiddenActions
-     * This list of actions is for those you always want in the menu, even if there
-     * is enough space.
      * @since 2.6
      */
     property alias hiddenActions: actionsToolBar.hiddenActions
 
     /**
-     * @property Image Card::banner
-     * Groupped property to control the banner image present in the header, it
-     * has the following sub properties:
+     * @brief This property holds a groupped property that controls the banner image present in the header.
+     *
+     * This groupped property has the following sub properties:
+     *
      * * url source: the source for the image, it understands any url
      *                    valid for an Image component
      * * string title: the title for the banner, shown as contrasting
@@ -62,6 +69,8 @@ Kirigami.AbstractCard {
      * * titleWrapMode: if the header should be able to do wrapping
      *
      * It also has the full set of properties a QML Image has, such as sourceSize and fillMode
+     *
+     * @property Image Card::banner
      */
     readonly property alias banner: bannerImage
 

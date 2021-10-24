@@ -19,18 +19,17 @@ AbstractListItem {
     id: listItem
 
     /**
-     * label: string
+     * @brief This property holds label of this list item.
      *
-     * The label of this list item. If a subtitle is provided, the label will
-     * behave as a title and will have a bold font. Every list item should have
-     * a label.
+     * If a subtitle is provided, the label will behave as a title and will have a
+     * bold font. Every list item should have a label.
+     *
+     * @property string label
      */
     property alias label: listItem.text
 
     /**
-     * subtitle: string
-     *
-     * An optional subtitle that can appear under the label.
+     * @brief This property holds an optional subtitle that can appear under the label.
      *
      * @since 5.70
      * @since org.kde.kirigami 2.12
@@ -38,9 +37,7 @@ AbstractListItem {
     property alias subtitle: subtitleItem.text
 
     /**
-     * leading: Item
-     *
-     * An item that will be displayed before the title and subtitle. Note that the
+     * This property holds an item that will be displayed before the title and subtitle. Note that the
      * leading item is allowed to expand infinitely horizontally, and should be bounded by the user.
      *
      * @since org.kde.kirigami 2.15
@@ -62,9 +59,7 @@ AbstractListItem {
     }
 
     /**
-     * leadingPadding: real
-     *
-     * Padding after the leading item.
+     * This property holds a the padding after the leading item.
      *
      * @since org.kde.kirigami 2.15
      */
@@ -86,9 +81,7 @@ AbstractListItem {
     property bool leadingFillVertically: true
 
     /**
-     * trailing: Item
-     *
-     * An item that will be displayed after the title and subtitle. Note that the
+     * This property holds an item that will be displayed after the title and subtitle. Note that the
      * trailing item is allowed to expand infinitely horizontally, and should be bounded by the user.
      *
      * @since org.kde.kirigami 2.15
@@ -111,9 +104,7 @@ AbstractListItem {
     }
 
     /**
-     * trailingPadding: real
-     *
-     * Padding before the trailing item.
+     * This property holds the padding before the trailing item.
      *
      * @since org.kde.kirigami 2.15
      */
@@ -135,9 +126,7 @@ AbstractListItem {
     property bool trailingFillVertically: true
 
     /**
-     * bold: bool
-     *
-     * Whether the list item's text (both label and subtitle, if provided) should
+     * This property holds whether the list item's text (both label and subtitle, if provided) should
      * render in bold.
      *
      * @since 5.71
@@ -146,8 +135,6 @@ AbstractListItem {
     property bool bold: false
 
     /**
-     * icon: var
-     *
      * @code ts
      * interface IconGroup {
      *     name:   string,
@@ -182,80 +169,74 @@ AbstractListItem {
     property var icon
 
     /**
-     * iconSize: int
-     *
-     * The size at which the icon will render at. This will not affect icon lookup,
+     * This property holds the size at which the icon will render at. This will not affect icon lookup,
      * unlike the icon group's width and height properties, which will.
      *
+     * @property int iconSize
      * @since 2.5
      */
     property alias iconSize: iconItem.size
 
     /**
-     * iconColor: color
-     *
-     * The color of the icon.
+     * This property holds color of the icon.
      *
      * If the icon's original colors should be left intact, set this to the default value, "transparent".
      * Note that this colour will only be applied if the icon can be recoloured, (e.g. you can use Kirigami.Theme.foregroundColor to change the icon's colour.)
      *
      * @since 2.7
+     * @property color iconColor
      */
     property alias iconColor: iconItem.color
 
     /**
-     * reserveSpaceForIcon: bool
-     *
-     * Whether or not to reserve space for the icon, even if there is no icon.
+     * This property holds whether or not to reserve space for the icon, even if there is no icon.
      *
      * @image html BasicListItemReserve.svg "Left: reserveSpaceForIcon: false. Right: reserveSpaceForIcon: true" width=50%
-     *
+     * @property bool reserveSpaceForIcon
      */
     property alias reserveSpaceForIcon: iconItem.visible
 
     /**
-     * reserveSpaceForLabel: bool
-     *
-     * Whether or not the label of the list item should fill width.
+     * This property holds whether or not the label of the list item should fill width.
      *
      * Setting this to false is useful if you have other items in the list item
      * that should fill width instead of the label.
      *
+     * @property bool reserveSpaceForLabel
      */
     property alias reserveSpaceForLabel: labelItem.visible
 
     /**
-     * reserveSpaceForSubtitle: bool
-     *
-     * Whether or not the list item's height should account for
+     * This property holds whether or not the list item's height should account for
      * the presence of a subtitle, even if one is not present.
+     *
      * @since 5.77
      * @since org.kde.kirigami 2.15
      */
     property bool reserveSpaceForSubtitle: false
 
     /**
-     * textSpacing: real
-     * 
-     * The spacing between the label row and subtitle row.
+     * This property holds the spacing between the label row and subtitle row.
      * 
      * @since 5.83
      * @since org.kde.kirigami 2.15
+     * @property real textSpacing
      */
     property alias textSpacing: labelColumn.spacing
 
     /**
-     * Whether to make the icon and labels have a disabled look. Defaults to
+     * This property holds whether to make the icon and labels have a disabled look. Defaults to
      * false. Can be used to tweak whether the content elements are visually
      * active while preserving an active appearance for any leading or trailing
      * items.
+     *
      * @since 5.83
      * @since org.kde.kirigami 2.15
      */
     property bool fadeContent: false
 
     /**
-     * The label item, for accessing the usual Text properties.
+     * This property holds the label item, for accessing the usual Text properties.
      *
      * @property QtQuick.Controls.Label labelItem
      * @since 5.84
@@ -264,7 +245,7 @@ AbstractListItem {
     property alias labelItem: labelItem
 
     /**
-     * The subtitle item, for accessing the usual Text properties.
+     * This property holds the subtitle item, for accessing the usual Text properties.
      *
      * @property QtQuick.Controls.Label subtitleItem
      * @since 5.84

@@ -11,9 +11,11 @@ import org.kde.kirigami 2.14 as Kirigami
 import "private"
 
 /**
- * This is a simple toolbar built out of a list of actions
- * each action is represented by a ToolButton, those that won't fit
- * the size will go in a menu under a button with the overflow ... icon
+ * @brief This is a simple toolbar built out of a list of actions.
+ *
+ * In the ActionToolBar, each action is represented by a QtQuick.Controls.ToolButton.
+ * The ActionToolBar component will try to display has many actions as possible but
+ * those that won't fit will go in a an overflow manu.
  *
  * @inherit QtQuick.Controls.Control
  * @since 2.5
@@ -21,74 +23,98 @@ import "private"
 Controls.Control {
     id: root
     /**
-    * @property list<Action> ActionToolBar::actions
-    * if the card should provide clickable actions, put them in this property,
-    * they will be put in the footer as a list of ToolButtons plus an optional
-    * overflow menu, when not all of them will fit in the available Card width.
-    */
+     * @brief This property holds a list of action that will appear in the ActionToolBar.
+     * The ActionToolBar component will try to display has many of these actions as possible
+     * as a list of ToolButton but those that won't fit will go in a an overflow manu.
+     *
+     * @property list<Action> ActionToolBar::actions
+     */
     property alias actions: layout.actions
 
     /**
-    * @property list<Action> ActionToolBar::hiddenActions
-    * This list of actions is for those you always want in the menu, even if there
-    * is enough space.
-    * @since 2.6
-    * @deprecated since 2.14, use the AlwaysHide hint on actions instead.
-    */
+     * This property holds a list of actions that will always be displayed in the overflow
+     * menu even if there is enough place.
+     *
+     * @since 2.6
+     * @property list<Action> ActionToolBar::hiddenActions
+     * @deprecated since 2.14, use the AlwaysHide hint on actions instead.
+     */
     property list<QtObject> hiddenActions
     onHiddenActionsChanged: print("ActionToolBar::hiddenActions is deprecated, use the AlwaysHide hint on your actions instead")
 
     /**
-     * Whether we want our buttons to have a flat appearance. Default: true
+     * This property holds whether we want our buttons to have a flat appearance.
+     *
+     * By default action will be using flat QtQuick.Controls.ToolButton.
      */
     property bool flat: true
 
     /**
-     * display: enum
-     * This controls the label position regarding the icon, is the same value to control individual Button components,
-     * permitted values are:
-     * * Button.IconOnly
-     * * Button.TextOnly
-     * * Button.TextBesideIcon
-     * * Button.TextUnderIcon
+     * This property holds the controls the label position regarding the icon.
+     *
+     * It is the same value to control individual Button components, permitted values are:
+     *
+     * * `Button.IconOnly`
+     * * `Button.TextOnly`
+     * * `Button.TextBesideIcon`
+     * * `Button.TextUnderIcon`
      */
     property int display: Controls.Button.TextBesideIcon
 
+    /**
+     * This property holds the alignment of the buttons.
+     *
+     * When there is more space available than required by the visible delegates,
+     * we need to determine how to place the delegates. This property determines
+     * how to do that.
+     *
+     * @property Qt::Alignment alignment
+     */
     property alias alignment: layout.alignment
 
     /**
-     * position enum
      * This property holds the position of the toolbar.
-     * if this ActionToolBar is the contentItem of a QQC2 Toolbar, the position is binded to the ToolBar's position
      *
-     * permitted values are:
-     * *ToolBar.Header: The toolbar is at the top, as a window or page header.
-     * *ToolBar.Footer: The toolbar is at the bottom, as a window or page footer.
+     * If this ActionToolBar is the contentItem of a QQC2 Toolbar, the position is binded to the ToolBar's position
+     *
+     * Permitted values are:
+     *
+     * * ToolBar.Header: The toolbar is at the top, as a window or page header.
+     * * ToolBar.Footer: The toolbar is at the bottom, as a window or page footer.
      */
     property int position: parent && parent.hasOwnProperty("position")
             ? parent.position
             : Controls.ToolBar.Header
 
     /**
-     * The maximum width of the contents of this ToolBar. If the toolbar's width is larger than this value, empty space will
+     * This property holds the maximum with of the content of this ToolBar.
+     *
+     * If the toolbar's width is larger than this value, empty space will
      * be added on the sides, according to the Alignment property.
      *
      * The value of this property is derived from the ToolBar's actions and their properties.
+     *
+     * @property int maximumContentWidth
      */
     readonly property alias maximumContentWidth: layout.implicitWidth
 
     /**
-     * The name of the icon to use for the overflow menu button.
+     * This property holds the name of the icon to use for the overflow menu button.
      *
      * @since 5.65
      * @since 2.12
      */
     property string overflowIconName: "overflow-menu"
 
+    /**
+     * This property holds the combined width of the visible delegates.
+     *
+     * @property int visibleWidth
+     */
     property alias visibleWidth: layout.visibleWidth
 
     /**
-     * Exposes heightMode of the internal layout.
+     * This property exposes the heightMode of the internal layout.
      *
      * \sa ToolBarLayout::heightMode
      */

@@ -17,9 +17,21 @@ import org.kde.kirigami 2.4 as Kirigami
  * @inherit QtQuick.Controls.Control
  */
 T2.Control {
+    /**
+     * This property holds the minimum height of the AbstractItemViewHeader.
+     */
     property int minimumHeight: Kirigami.Units.gridUnit * 2 + Kirigami.Units.smallSpacing * 2
+
+    /**
+     * This property holds the maximum height of the AbstractItemViewHeader.
+     */
     property int maximumHeight: Kirigami.Units.gridUnit * 6
 
+    /**
+     * This property holds the ListView for which this item is the header.
+     *
+     * By default automatically set to the attached property: `ListView.view`.
+     */
     property ListView view: ListView.view
 
     width: view.width

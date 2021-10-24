@@ -14,6 +14,7 @@ import "templates/private" as P
 
 /**
  * An element that represents a user, either with initials, an icon, or a profile image.
+ *
  * @inherit QtQuick.Controls.Control
  */
 QQC2.Control {
@@ -30,74 +31,96 @@ QQC2.Control {
     }
 
     /**
-    * The given name of a user.
-    *
-    * The user's name will be used for generating initials and to provide the
-    * accessible name for assistive technology.
-    */
+     * This property holds the given name of a user.
+     *
+     * The user's name will be used for generating initials and to provide the
+     * accessible name for assistive technology.
+     */
     property string name
 
     /**
-    * The source of the user's profile picture; an image.
-    */
+     * This property holds the source of the user's profile picture; an image.
+     */
     property alias source: avatarImage.source
 
     /**
-    * How the button should represent the user when there is no image available.
-    * * `UseInitials` - Use initials when the image is not available
-    * * `UseIcon` - Use an icon of a user when the image is not available
-    */
+     * This property holds how the button should represent the user when there is no image available.
+     *
+     * Possible values are:
+     * * `Avatar.InitialsMode.UseInitials` - Use initials when the image is not available
+     * * `Avatar.InitialsMode.UseIcon` - Use an icon of a user when the image is not available
+     */
     property int initialsMode: Kirigami.Avatar.InitialsMode.UseInitials
 
     /**
-    * Whether the button should always show the image; show the image if one is
-    * available and show initials when it is not; or always show initials.
-    * * `AlwaysShowImage` - Always show the image; even if is not value
-    * * `AdaptiveImageOrInitals` - Show the image if it is valid; or show initials if it is not
-    * * `AlwaysShowInitials` - Always show initials
-    */
+     * This property holds whether the button should always show the image; show the image if one is
+     * available and show initials when it is not; or always show initials.
+     *
+     * Possible values are:
+     * * `Avatar.ImageMode.AlwaysShowImage` - Always show the image; even if is not value
+     * * `Avatar.ImageMode.AdaptiveImageOrInitals` - Show the image if it is valid; or show initials if it is not
+     * * `Avatar.ImageMode.AlwaysShowInitials` - Always show initials
+     */
     property int imageMode: Kirigami.Avatar.ImageMode.AdaptiveImageOrInitals
 
-     /**
-     * Whether or not the image loaded from the provided source should be cached.
+    /**
+     * This property holds whether or not the image loaded from the provided source should be cached.
      *
+     * @property bool sourceSize
      */
-     property alias cache: avatarImage.cache
+    property alias cache: avatarImage.cache
 
     /**
-    * The source size of the user's profile picture.
-    */
+     * This property holds the source size of the user's profile picture.
+     *
+     * @property int sourceSize
+     */
     property alias sourceSize: avatarImage.sourceSize
 
     /**
-    * Whether or not the image loaded from the provided source should be smoothed.
-    */
+     * This property holds whether or not the image loaded from the provided source should be smoothed.
+     */
     property alias smooth: avatarImage.smooth
 
     /**
+     * This property holds the color to use for this avatar.
      *
-     */
-
-    /**
-     * color: color
+     * If not explicitly set, this defaults to generating a colour from the name.
      *
-     * The color to use for this avatar. If not explicitly set, this defaults to generating a colour from the name.
+     * @property color color
      */
     property var color: Kirigami.NameUtils.colorsFromString(name)
     // We use a var instead of a color here to allow setting the colour
     // as undefined, which will result in a generated colour being used.
 
     /**
-     * actions.main: Kirigami.Action
-     * actions.secondary: Kirigami.Action
+     * This property holds the main and secondary actions associated
+     * with this avatar.
+     *
+     * @code
+     * Kirigami.Avatar {
+     *     actions.main: Kirigami.Action {}
+     *     actions.secondary: Kirigami.Action {}
+     * }
+     * @endcode
      *
      * Actions associated with this avatar.
      *
-     * Note that the secondary action should only be used for shortcuts of actions
+     * @note The secondary action should only be used for shortcuts of actions
      * elsewhere in your application's UI, and cannot be accessed on mobile platforms.
      */
     property AvatarGroup actions: AvatarGroup {}
 
+    /**
+     * This property holds the border properties.
+     *
+     * @code
+     * Kirigami.Avatar {
+     *     border.width: 10
+     *     border.color: 'red'
+     * }
+     * @endcode
+     */
     property P.BorderPropertiesGroup border: P.BorderPropertiesGroup {
         width: 0
         color: Qt.rgba(0,0,0,0.2)
