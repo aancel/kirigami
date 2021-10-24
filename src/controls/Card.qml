@@ -42,7 +42,7 @@ Kirigami.AbstractCard {
     property list<QtObject> actions
 
     /**
-     * This property holds the list of actions is for those you always want in the menu, even
+     * This property holds the list of actions that you always want in the menu, even
      * if there is enough space.
      *
      * @property list<org::kde::kirigami::Action> hiddenActions
@@ -51,9 +51,9 @@ Kirigami.AbstractCard {
     property alias hiddenActions: actionsToolBar.hiddenActions
 
     /**
-     * @brief This property holds a groupped property that controls the banner image present in the header.
+     * @brief This property holds a grouped property that controls the banner image present in the header.
      *
-     * This groupped property has the following sub properties:
+     * This grouped property has the following sub-properties:
      *
      * * url source: the source for the image, it understands any url
      *                    valid for an Image component

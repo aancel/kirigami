@@ -45,7 +45,7 @@ Controls.Control {
     /**
      * This property holds whether we want our buttons to have a flat appearance.
      *
-     * By default action will be using flat QtQuick.Controls.ToolButton.
+     * By default will use a flat QtQuick.Controls.ToolButton appearance.
      */
     property bool flat: true
 
@@ -75,7 +75,7 @@ Controls.Control {
     /**
      * This property holds the position of the toolbar.
      *
-     * If this ActionToolBar is the contentItem of a QQC2 Toolbar, the position is binded to the ToolBar's position
+     * If this ActionToolBar is the contentItem of a QQC2 Toolbar, the position is bound to the ToolBar's position
      *
      * Permitted values are:
      *

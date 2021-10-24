@@ -60,10 +60,10 @@ Controls.Action {
     property bool separator: false
 
     /**
-     * This property hols whether the actions in globalDrawers and contextDrawers will
+     * This property holds whether the actions in globalDrawers and contextDrawers will
      * become titles displaying the child actions as sub items.
      *
-     * By default the action is not expandible.
+     * By default the action is not expandable.
      * @since 2.6
      */
     property bool expandible: false
@@ -115,7 +115,7 @@ Controls.Action {
     /**
      * This action holds a list of children actions.
      *
-     * This is useful for tree-like menus. For example for the GlobalDrawer.
+     * This is useful for tree-like menus, such as the GlobalDrawer.
      *
      * @code
      * Action {

@@ -51,7 +51,7 @@ CardsGridViewPrivate {
     /**
      * @brief This property holds the maximum width the columns may have.
      *
-     * The cards will never get wider than this size, when the GridView is wider
+     * The cards will never become wider than this size; when the GridView is wider
      * than maximumColumnWidth, it will switch from one to two columns.
      *
      * If the default needs to be overridden for some reason,
@@ -63,7 +63,7 @@ CardsGridViewPrivate {
     /**
      * This property holds the minimum width the columns may have.
      *
-     * The cards will never get smaller than this size.
+     * The cards will never become smaller than this size.
      *
      * If the default needs to be overridden for some reason,
      * it is advised to express this unit as a multiple

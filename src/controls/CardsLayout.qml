@@ -42,7 +42,7 @@ GridLayout {
     /**
      * @brief This property holds the maximum width the columns may have.
      *
-     * The cards will never get wider than this size, when the GridLayout is wider than
+     * The cards will never become wider than this size; when the GridLayout is wider than
      * maximumColumnWidth, it will switch from one to two columns.
      *
      * If the default needs to be overridden for some reason,
@@ -54,7 +54,7 @@ GridLayout {
     /**
      * @brief This property holds the minimum width the columns may have.
      *
-     * The layout will try to dispose items
+     * The layout will try to dispose of items
      * in a number of columns that will respect this size constraint.
      *
      * @since 2.5
