@@ -58,6 +58,8 @@ Controls.Control {
      * * `Button.TextOnly`
      * * `Button.TextBesideIcon`
      * * `Button.TextUnderIcon`
+     *
+     * By default the text is display beside the icon.
      */
     property int display: Controls.Button.TextBesideIcon
 
@@ -67,6 +69,8 @@ Controls.Control {
      * When there is more space available than required by the visible delegates,
      * we need to determine how to place the delegates. This property determines
      * how to do that.
+     *
+     * By default the buttons are right-aligned.
      *
      * @property Qt::Alignment alignment
      */
@@ -100,6 +104,8 @@ Controls.Control {
 
     /**
      * This property holds the name of the icon to use for the overflow menu button.
+     *
+     * By default this is "overflow-menu".
      *
      * @since 5.65
      * @since 2.12

@@ -56,7 +56,9 @@ CardsGridViewPrivate {
      *
      * If the default needs to be overridden for some reason,
      * it is advised to express this unit as a multiple
-     * of Kirigami.Units.gridUnit
+     * of Kirigami.Units.gridUnit.
+     *
+     * By default this is 20 * Kirigami.Units.gridUnit.
      */
     property int maximumColumnWidth: Kirigami.Units.gridUnit * 20
 
@@ -67,7 +69,10 @@ CardsGridViewPrivate {
      *
      * If the default needs to be overridden for some reason,
      * it is advised to express this unit as a multiple
-     * of Kirigami.Units.gridUnit
+     * of Kirigami.Units.gridUnit.
+     *
+     * By default this is 12 * Kirigami.Units.gridUnit.
+     *
      * @since 2.5
      */
     property int minimumColumnWidth: Kirigami.Units.gridUnit * 12

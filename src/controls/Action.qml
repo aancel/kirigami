@@ -76,7 +76,9 @@ Controls.Action {
     /**
      * This property holds a combination of values from the Action.DisplayHint enum.
      * These are provided to implementations to indicate a preference for certain display
-     * styles. The default is DisplayHint.NoPreference.
+     * styles.
+     *
+     * By default there is no display hint (`DisplayHint.NoPreference`).
      *
      * @note This property contains only preferences, implementations may choose to disregard them.
      *
