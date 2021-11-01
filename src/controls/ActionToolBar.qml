@@ -76,7 +76,7 @@ Controls.Control {
      * we need to determine how to place the delegates. This property determines
      * how to do that.
      *
-     * By default the buttons are right-aligned.
+     * The defaul is right-aligned buttons (`Qt.AlignRight`).
      *
      * @property Qt::Alignment alignment
      */

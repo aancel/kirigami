@@ -24,7 +24,7 @@ Controls.Action {
      *
      * It's up to the action representation to honor this property.
      *
-     * By default the action is visible.
+     * The default value is `true`.
      */
     property bool visible: true
 
@@ -58,7 +58,7 @@ Controls.Action {
     /**
      * This property holds whether the action is a separator action.
      *
-     * By default the action isn't a separator.
+     * The default value is `false`.
      */
     property bool separator: false
 
@@ -66,7 +66,7 @@ Controls.Action {
      * This property holds whether the actions in globalDrawers and contextDrawers will
      * become titles displaying the child actions as sub items.
      *
-     * By default the action is not expandable.
+     * The default value is `false`.
      * @since 2.6
      */
     property bool expandible: false
