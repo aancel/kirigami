@@ -75,7 +75,7 @@ Controls.Control {
      * When there is more space available than required by the visible delegates,
      * we need to determine how to place the delegates.
      *
-     * The defaul is right-aligned buttons (`Qt.AlignRight`).
+     * The default value is right-aligned buttons (`Qt.AlignRight`).
      *
      * @property Qt::Alignment alignment
      */
