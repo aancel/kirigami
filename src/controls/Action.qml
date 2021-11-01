@@ -19,7 +19,7 @@ Controls.Action {
     id: root
 
     /**
-     * @brief This property holds whether the graphic representation of the action
+     * This property holds whether the graphic representation of the action
      * is supposed to be visible.
      *
      * It's up to the action representation to honor this property.
@@ -29,7 +29,7 @@ Controls.Action {
     property bool visible: true
 
     /**
-     * @brief This property holds the icon name for the action. This will pick the icon with the given name from the current theme.
+     * This property holds the icon name for the action. This will pick the icon with the given name from the current theme.
      *
      * @property string Action::iconName
      * @deprecated Use icon.name instead.
@@ -37,7 +37,7 @@ Controls.Action {
     property alias iconName: root.icon.name
 
     /**
-     * @brief This property holds an url to an icon file or resource url for the action.
+     * This property holds an url to an icon file or resource url for the action.
      *
      * By default this is an empty URL. Use this if you want a specific file rather than an icon from the theme
      *
@@ -47,11 +47,10 @@ Controls.Action {
     property alias iconSource: root.icon.source
 
     /**
-     * This property holds a tooltip text to be shown when hovering the control bound to this
-     * This property holds a tooltip text that can be shown by a control that uses this action.
+     * This property holds the tooltip text to be shown when hovering the control bound to this
+     * action.
      *
-     * The control decides when to show the text, for example, it could be shown when hovering.
-     * Not all controls support tooltips on all platforms.
+     * @warning Not all controls support tooltips on all platforms.
      */
     property string tooltip
 

@@ -51,14 +51,12 @@ Controls.Control {
     /**
      * This property holds whether the buttons will have a flat appearance.
      *
-     * By default will use a flat QtQuick.Controls.ToolButton appearance.
+     * The default value is true.
      */
     property bool flat: true
 
     /**
-     * This property holds the controls the label position regarding the icon.
-     *
-     * It is the same value to control individual Button components, permitted values are:
+     * This property determines how the icon and text are displayed within the button.
      *
      * * `Button.IconOnly`
      * * `Button.TextOnly`
@@ -66,6 +64,8 @@ Controls.Control {
      * * `Button.TextUnderIcon`
      *
      * By default the text is display beside the icon.
+     *
+     * \sa QtQuick.Controls.AbstractButton
      */
     property int display: Controls.Button.TextBesideIcon
 
@@ -73,8 +73,7 @@ Controls.Control {
      * This property holds the alignment of the buttons.
      *
      * When there is more space available than required by the visible delegates,
-     * we need to determine how to place the delegates. This property determines
-     * how to do that.
+     * we need to determine how to place the delegates.
      *
      * The defaul is right-aligned buttons (`Qt.AlignRight`).
      *
@@ -126,9 +125,16 @@ Controls.Control {
     property alias visibleWidth: layout.visibleWidth
 
     /**
-     * This property exposes the heightMode of the internal layout.
+     * This propery holds how to handle items that do not match the toolbar's height.
+     *
+     * When toolbar items do not match the height of the toolbar, there are
+     * several ways we can deal with this. This property sets the preferred way.
+     *
+     * The default is HeightMode::ConstrainIfLarger .
      *
      * \sa ToolBarLayout::heightMode
+     *
+     * \sa ToolBarLayout::HeightMode
      */
     property alias heightMode: layout.heightMode
 

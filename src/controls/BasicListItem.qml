@@ -21,8 +21,8 @@ AbstractListItem {
     /**
      * @brief This property holds label of this list item.
      *
-     * If a subtitle is provided, the label will behave as a title and will have a
-     * bold font. Every list item should have a label.
+     * If a subtitle is provided, the label will behave as a title and will be styled
+     * accordingly. Every list item should have a label.
      *
      * @property string label
      */

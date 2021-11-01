@@ -57,9 +57,9 @@ QQC2.Control {
      * available and show initials when it is not; or always show initials.
      *
      * Possible values are:
-     * * `Avatar.ImageMode.AlwaysShowImage` - Always show the image; even if is not value
-     * * `Avatar.ImageMode.AdaptiveImageOrInitals` - Show the image if it is valid; or show initials if it is not
-     * * `Avatar.ImageMode.AlwaysShowInitials` - Always show initials
+     * * `Avatar.ImageMode.AlwaysShowImage`: Always try to show the image; even if it hasn't loaded yet or is undefined.
+     * * `Avatar.ImageMode.AdaptiveImageOrInitals`: Show the image if it is valid; or show initials if it is not
+     * * `Avatar.ImageMode.AlwaysShowInitials`: Always show initials
      */
     property int imageMode: Kirigami.Avatar.ImageMode.AdaptiveImageOrInitals
 

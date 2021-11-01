@@ -48,6 +48,7 @@ Kirigami.AbstractCard {
      * This property holds the list of actions that you always want in the menu, even
      * if there is enough space.
      *
+     * @depracted Use actions with a `Kirigami.DisplayHint.AlwaysHide` as displayHint.
      * @property list<org::kde::kirigami::Action> hiddenActions
      * @since 2.6
      */
