@@ -66,7 +66,7 @@ QQC2.Control {
     /**
      * This property holds whether or not the image loaded from the provided source should be cached.
      *
-     * @property bool sourceSize
+     * @property bool cache
      */
     property alias cache: avatarImage.cache
 

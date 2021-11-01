@@ -82,7 +82,7 @@ AbstractApplicationItem {
     /**
      * @property QtQuick.StackView ApplicationItem::pageStack
      *
-     * @brief This property holds the stack used to allocate the pages and to
+     * @brief This property holds the PageRow used to allocate the pages and
      * manage the transitions between them.
      *
      * It's using a PageRow, while having the same API as PageStack,

@@ -37,8 +37,9 @@ AbstractListItem {
     property alias subtitle: subtitleItem.text
 
     /**
-     * This property holds an item that will be displayed before the title and subtitle. Note that the
-     * leading item is allowed to expand infinitely horizontally, and should be bounded by the user.
+     * This property holds an item that will be displayed before the title and subtitle.
+     *
+     * @note The leading item is allowed to expand infinitely horizontally, and should be bounded by the user.
      *
      * @since org.kde.kirigami 2.15
      */
@@ -169,7 +170,7 @@ AbstractListItem {
     property var icon
 
     /**
-     * This property holds the size at which the icon will render at. This will not affect icon lookup,
+     * This property holds the size at which the icon will render. This will not affect icon lookup,
      * unlike the icon group's width and height properties, which will.
      *
      * @property int iconSize
@@ -178,7 +179,7 @@ AbstractListItem {
     property alias iconSize: iconItem.size
 
     /**
-     * This property holds color of the icon.
+     * This property holds the color of the icon.
      *
      * If the icon's original colors should be left intact, set this to the default value, "transparent".
      * Note that this colour will only be applied if the icon can be recoloured, (e.g. you can use Kirigami.Theme.foregroundColor to change the icon's colour.)

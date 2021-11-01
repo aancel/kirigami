@@ -100,7 +100,7 @@ AbstractApplicationWindow {
      * as can fit in the screen. An handheld device would usually have a single
      * fullscreen column, a tablet device would have many tiled columns.
      *
-     * @warning This property is readonly.
+     * @warning This property is not currently readonly, but it should be treated like it is readonly.
      */
     property alias pageStack: __pageStack // TODO KF6 make readonly
 

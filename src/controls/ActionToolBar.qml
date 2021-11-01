@@ -11,9 +11,10 @@ import org.kde.kirigami 2.14 as Kirigami
 import "private"
 
 /**
- * @brief This is a simple toolbar built out of a list of actions.
+ * A toolbar built out of a list of actions.
  *
- * In the ActionToolBar, each action is represented by a QtQuick.Controls.ToolButton.
+ * The default representation for visible actions is a QtQuick.Controls.ToolButton, but
+ * it can be changed by setting the `Action.displayComponent` for an action.
  * The ActionToolBar component will try to display has many actions as possible but
  * The default behavior of ActionToolBar is to display as many actions as possible,
  * placing those that will not fit into an overflow menu. This can be changed by
@@ -29,8 +30,8 @@ Controls.Control {
     id: root
     /**
      * @brief This property holds a list of action that will appear in the ActionToolBar.
-     * The ActionToolBar component will try to display has many of these actions as possible
-     * as a list of ToolButton but those that won't fit will go in a an overflow manu.
+     * The ActionToolBar will try to display as many actions as possible.
+     * Those that won't fit will go into an overflow menu.
      *
      * @property list<Action> ActionToolBar::actions
      */
@@ -48,7 +49,7 @@ Controls.Control {
     onHiddenActionsChanged: print("ActionToolBar::hiddenActions is deprecated, use the AlwaysHide hint on your actions instead")
 
     /**
-     * This property holds whether we want our buttons to have a flat appearance.
+     * This property holds whether the buttons will have a flat appearance.
      *
      * By default will use a flat QtQuick.Controls.ToolButton appearance.
      */
@@ -96,7 +97,7 @@ Controls.Control {
             : Controls.ToolBar.Header
 
     /**
-     * This property holds the maximum with of the content of this ToolBar.
+     * This property holds the maximum width of the content of this ToolBar.
      *
      * If the toolbar's width is larger than this value, empty space will
      * be added on the sides, according to the Alignment property.

@@ -39,7 +39,7 @@ Controls.Action {
     /**
      * @brief This property holds an url to an icon file or resource url for the action.
      *
-     * Defaults to the empty URL. Use this if you want a specific file rather than an icon from the theme
+     * By default this is an empty URL. Use this if you want a specific file rather than an icon from the theme
      *
      * @property url Action::iconSource
      * @deprecated Use icon.name instead.
@@ -48,7 +48,10 @@ Controls.Action {
 
     /**
      * This property holds a tooltip text to be shown when hovering the control bound to this
-     * action. Not all controls support tooltips on all platforms
+     * This property holds a tooltip text that can be shown by a control that uses this action.
+     *
+     * The control decides when to show the text, for example, it could be shown when hovering.
+     * Not all controls support tooltips on all platforms.
      */
     property string tooltip
 
