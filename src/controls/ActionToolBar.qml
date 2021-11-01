@@ -15,7 +15,12 @@ import "private"
  *
  * In the ActionToolBar, each action is represented by a QtQuick.Controls.ToolButton.
  * The ActionToolBar component will try to display has many actions as possible but
- * those that won't fit will go in a an overflow manu.
+ * The default behavior of ActionToolBar is to display as many actions as possible,
+ * placing those that will not fit into an overflow menu. This can be changed by
+ * setting the `displayHint` property on an Action. For example, when setting the
+ * `DisplayHint.KeepVisible` display hint, ActionToolBar will try to keep that action
+ * in view as long as possible, using an icon-only button if a button with text
+ * does not fit.
  *
  * @inherit QtQuick.Controls.Control
  * @since 2.5

@@ -69,7 +69,7 @@ Controls.Action {
     property bool expandible: false
 
     /**
-     * This property holds the parent action of this parent.
+     * This property holds the parent action of this action.
      */
     property Controls.Action parent
 
@@ -105,7 +105,7 @@ Controls.Action {
     }
 
     /**
-     * This property holds a component that should be preferred when displaying this Action.
+     * This property holds the component that should be preferred for displaying this Action.
      *
      * This can be used to display custom components in the toolbar.
      *
@@ -115,7 +115,7 @@ Controls.Action {
     property Component displayComponent: null
 
     /**
-     * This action holds a list of children actions.
+     * This property holds a list of child actions.
      *
      * This is useful for tree-like menus, such as the GlobalDrawer.
      *
@@ -148,7 +148,7 @@ Controls.Action {
     }
 
     /**
-     * This property holds the visible children actions that are visible.
+     * This property holds the child actions that are visible.
      *
      * @property list<Action> Action::visibleChildren
      */
