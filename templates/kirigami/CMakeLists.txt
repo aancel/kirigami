@@ -3,7 +3,7 @@
 
 cmake_minimum_required(VERSION 3.16)
 
-project(%{APPNAMELC})
+project(%{APPNAMELC} VERSION 0.1)
 
 include(FeatureSummary)
 
@@ -21,8 +21,13 @@ include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 include(ECMPoQmTools)
 
+ecm_setup_version(${PROJECT_VERSION}
+    VARIABLE_PREFIX %{APPNAMEUC}
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/src/version-%{APPNAMELC}.h"
+)
+
 find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED COMPONENTS Core Gui Qml QuickControls2 Svg)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Kirigami2 I18n)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Kirigami2 CoreAddons Config I18n)
 
 add_subdirectory(src)
 
